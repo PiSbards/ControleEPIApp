@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ControleEPIApp.View.PageListarEPI" BackgroundColor="White" Title="EPI's">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="A VENCER" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
+            <Image Source="avencer" Margin="2"/>
+            <ListView x:Name="lsvEPI" HasUnevenRows="True" Margin="15" ItemSelected="lsvEPI_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout VerticalOptions="FillAndExpand">
+                                <Label Text="{Binding id,StringFormat='ID da Entrega: {0}'}" FontSize="16" TextColor="DarkViolet" FontAttributes="Bold"/>
+                                <Label Text="{Binding matricula,StringFormat='Matricula: {0}'}" FontSize="16" TextColor="Blue" FontAttributes="Bold"/>
+                                <Label Text="{Binding epi,StringFormat='Epi: {0}'}" FontSize="16" TextColor="Blue" FontAttributes="Bold"/>
+                                <Label Text="{Binding nome,StringFormat='Funcionário: {0}'}" FontSize="16"/>
+                                <Label Text="{Binding data_vencimento,StringFormat='Data: {0:dd/MM/yyyy}'}" FontSize="16"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="VENCIDAS" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
+            <ListView x:Name="lsvEPIVencida" HasUnevenRows="True" Margin="15" ItemSelected="lsvEPIVencida_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout VerticalOptions="FillAndExpand">
+                                <Label Text="{Binding id,StringFormat='ID da Entrega: {0}'}" FontSize="16" TextColor="DarkViolet" FontAttributes="Bold"/>
+                                <Label Text="{Binding matricula,StringFormat='Matricula: {0}'}" FontSize="16" TextColor="Blue" FontAttributes="Bold"/>
+                                <Label Text="{Binding epi,StringFormat='Epi: {0}'}" FontSize="16" TextColor="Blue" FontAttributes="Bold"/>
+                                <Label Text="{Binding nome,StringFormat='Funcionário: {0}'}" FontSize="16"/>
+                                <Label Text="{Binding data_vencimento,StringFormat='Data: {0:dd/MM/yyyy}'}" FontSize="16"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
